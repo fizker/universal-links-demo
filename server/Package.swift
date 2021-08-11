@@ -7,6 +7,7 @@ let package = Package(
 		.macOS(.v10_15),
 	],
 	dependencies: [
+		.package(url: "https://github.com/fizker/swift-apple-associated-domains-vapor.git", .upToNextMajor(from: "1.0.0")),
 		// 💧 A server-side Swift web framework.
 		.package(url: "https://github.com/vapor/vapor.git", from: "4.0.0"),
 	],
@@ -14,6 +15,7 @@ let package = Package(
 		.target(
 			name: "App",
 			dependencies: [
+				.product(name: "AppleAssociatedDomainsVapor", package: "swift-apple-associated-domains-vapor"),
 				.product(name: "Vapor", package: "vapor"),
 			],
 			swiftSettings: [

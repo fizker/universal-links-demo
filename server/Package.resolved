@@ -47,6 +47,24 @@
         }
       },
       {
+        "package": "swift-apple-associated-domains",
+        "repositoryURL": "https://github.com/fizker/swift-apple-associated-domains.git",
+        "state": {
+          "branch": null,
+          "revision": "fc159c186a2a698c298edc842db4a72c8ac4e8c7",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "swift-apple-associated-domains-vapor",
+        "repositoryURL": "https://github.com/fizker/swift-apple-associated-domains-vapor.git",
+        "state": {
+          "branch": null,
+          "revision": "9dfd88d81c9c27e161bad09a27eeca3575e42fe9",
+          "version": "1.0.0"
+        }
+      },
+      {
         "package": "swift-backtrace",
         "repositoryURL": "https://github.com/swift-server/swift-backtrace.git",
         "state": {
