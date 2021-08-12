@@ -15,7 +15,7 @@ func routes(_ app: Application) throws {
 		details: [
 			.init(
 				appIDs: [
-					"dk.fizkerinc.universal-links.UIKitDemo",
+					"JJYTU65Q3D.dk.fizkerinc.universal-links.UIKitDemo",
 				]
 			),
 		]

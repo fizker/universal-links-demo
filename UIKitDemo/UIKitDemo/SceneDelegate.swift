@@ -8,6 +8,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
 		// This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 		guard let _ = (scene as? UIWindowScene) else { return }
+
+		if let userActivity = connectionOptions.userActivities.first {
+			handle(userActivity)
+		}
+	}
+
+	func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+		handle(userActivity)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
@@ -36,5 +44,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// Called as the scene transitions from the foreground to the background.
 		// Use this method to save data, release shared resources, and store enough scene-specific state information
 		// to restore the scene back to its current state.
+	}
+
+	private func handle(_ userActivity: NSUserActivity) {
+		guard
+			userActivity.activityType == NSUserActivityTypeBrowsingWeb,
+			let incomingURL = userActivity.webpageURL,
+			let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true)
+		else { return }
+
+		print("Should handle \(incomingURL.absoluteString)")
+
+		guard
+			let path = components.path,
+			let params = components.queryItems
+		else { return }
+
+		print("path: \(path), params: \(params)")
 	}
 }

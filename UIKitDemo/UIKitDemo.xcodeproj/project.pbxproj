@@ -24,6 +24,7 @@
 		43E22F5826BFD51E0008FA84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43E22F5B26BFD51E0008FA84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43E22F5D26BFD51E0008FA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43E22F7E26BFDA2E0008FA84 /* UIKitDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = UIKitDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,7 @@
 		43E22F4E26BFD51B0008FA84 /* UIKitDemo */ = {
 			isa = PBXGroup;
 			children = (
+				43E22F7E26BFDA2E0008FA84 /* UIKitDemo.entitlements */,
 				43E22F4F26BFD51B0008FA84 /* AppDelegate.swift */,
 				43E22F5126BFD51B0008FA84 /* SceneDelegate.swift */,
 				43E22F5326BFD51B0008FA84 /* ViewController.swift */,
@@ -286,6 +288,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UIKitDemo/UIKitDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJYTU65Q3D;
 				INFOPLIST_FILE = UIKitDemo/Info.plist;
@@ -305,6 +308,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = UIKitDemo/UIKitDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = JJYTU65Q3D;
 				INFOPLIST_FILE = UIKitDemo/Info.plist;
