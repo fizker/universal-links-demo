@@ -1,5 +1,21 @@
 import UIKit
 
+extension Notification.Name {
+	static var latestUniversalLinkWasUpdated = Notification.Name("latestUniversalLinkWasUpdated")
+}
+
+class UniversalLinkController {
+	static let shared = UniversalLinkController()
+
+	let notificationCenter = NotificationCenter.default
+
+	var latestUniversalLink: URL? {
+		didSet {
+			notificationCenter.post(name: .latestUniversalLinkWasUpdated, object: latestUniversalLink)
+		}
+	}
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
 
@@ -49,17 +65,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	private func handle(_ userActivity: NSUserActivity) {
 		guard
 			userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-			let incomingURL = userActivity.webpageURL,
-			let components = NSURLComponents(url: incomingURL, resolvingAgainstBaseURL: true)
+			let incomingURL = userActivity.webpageURL
 		else { return }
 
-		print("Should handle \(incomingURL.absoluteString)")
-
-		guard
-			let path = components.path,
-			let params = components.queryItems
-		else { return }
-
-		print("path: \(path), params: \(params)")
+		UniversalLinkController.shared.latestUniversalLink = incomingURL
 	}
 }
