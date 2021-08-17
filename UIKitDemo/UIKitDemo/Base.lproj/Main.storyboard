@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="UIKitDemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Latest Universal Link:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eC8-wM-kdn">
+                                <rect key="frame" x="16" y="145" width="382" height="17"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nSe-Da-zFj">
+                                <rect key="frame" x="16" y="170" width="382" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Universal Links UIKit app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Jc-IA-Q0m">
+                                <rect key="frame" x="16" y="44" width="382" height="37"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This shows the result of the last universal link that this app have opened." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlj-0s-eg8">
+                                <rect key="frame" x="16" y="101" width="382" height="36"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zlj-0s-eg8" firstAttribute="trailing" secondItem="3Jc-IA-Q0m" secondAttribute="trailing" id="4os-bB-lfD"/>
+                            <constraint firstItem="eC8-wM-kdn" firstAttribute="leading" secondItem="zlj-0s-eg8" secondAttribute="leading" id="6a2-He-6Mk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Jc-IA-Q0m" secondAttribute="trailing" constant="16" id="EZJ-Aq-alR"/>
+                            <constraint firstItem="eC8-wM-kdn" firstAttribute="trailing" secondItem="zlj-0s-eg8" secondAttribute="trailing" id="FHu-gj-cVk"/>
+                            <constraint firstItem="nSe-Da-zFj" firstAttribute="top" secondItem="eC8-wM-kdn" secondAttribute="bottom" constant="8" symbolic="YES" id="LJS-yx-qzB"/>
+                            <constraint firstItem="zlj-0s-eg8" firstAttribute="top" secondItem="3Jc-IA-Q0m" secondAttribute="bottom" constant="20" id="Owc-S3-wsg"/>
+                            <constraint firstItem="eC8-wM-kdn" firstAttribute="top" secondItem="zlj-0s-eg8" secondAttribute="bottom" constant="8" symbolic="YES" id="UGV-sV-7dl"/>
+                            <constraint firstItem="zlj-0s-eg8" firstAttribute="leading" secondItem="3Jc-IA-Q0m" secondAttribute="leading" id="X2b-42-pQL"/>
+                            <constraint firstItem="3Jc-IA-Q0m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="a83-g6-nig"/>
+                            <constraint firstItem="3Jc-IA-Q0m" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="hWo-2Q-31V"/>
+                            <constraint firstItem="nSe-Da-zFj" firstAttribute="trailing" secondItem="eC8-wM-kdn" secondAttribute="trailing" id="hdq-fd-biX"/>
+                            <constraint firstItem="nSe-Da-zFj" firstAttribute="leading" secondItem="eC8-wM-kdn" secondAttribute="leading" id="yIh-om-qbZ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="latestUniversalLinkTextField" destination="nSe-Da-zFj" id="9i9-qb-Lnf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="53.571428571428569"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
