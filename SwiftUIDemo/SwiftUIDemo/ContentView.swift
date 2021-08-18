@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-	@State var latestLinkText: String = "link text"
+	@State var latestLinkText: String = ""
 
 	var body: some View {
 		VStack(alignment: .leading) {
@@ -19,6 +19,9 @@ struct ContentView: View {
 			Spacer()
 		}
 			.padding(.horizontal, 8)
+			.onOpenURL { url in
+				latestLinkText = url.path
+			}
 	}
 }
 

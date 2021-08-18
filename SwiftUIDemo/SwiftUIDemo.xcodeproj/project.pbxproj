@@ -20,6 +20,7 @@
 		43E22F7326BFD7140008FA84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43E22F7626BFD7140008FA84 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		43E22F7826BFD7140008FA84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		43F33BC026CD55FD002BE8CF /* SwiftUIDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftUIDemo.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +53,7 @@
 		43E22F6E26BFD7120008FA84 /* SwiftUIDemo */ = {
 			isa = PBXGroup;
 			children = (
+				43F33BC026CD55FD002BE8CF /* SwiftUIDemo.entitlements */,
 				43E22F6F26BFD7120008FA84 /* SwiftUIDemoApp.swift */,
 				43E22F7126BFD7120008FA84 /* ContentView.swift */,
 				43E22F7326BFD7140008FA84 /* Assets.xcassets */,
@@ -267,6 +269,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIDemo/SwiftUIDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = JJYTU65Q3D;
@@ -289,6 +292,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftUIDemo/SwiftUIDemo.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDemo/Preview Content\"";
 				DEVELOPMENT_TEAM = JJYTU65Q3D;
