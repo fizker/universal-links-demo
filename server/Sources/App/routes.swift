@@ -12,7 +12,9 @@ func routes(_ app: Application) throws {
 
 	app.get("to-all") { req in
 		HTMLPage(title: "All", body: """
-		All apps can open from this page.
+		All apps can open from this page.<br>
+		<br>
+		Note that if multiple apps are installed, only one of them will respond to this URL.
 		""")
 	}
 
@@ -44,6 +46,15 @@ func routes(_ app: Application) throws {
 				components: [
 					.init(path: "/to-all"),
 					.init(path: "/to-uikit"),
+				]
+			),
+			.init(
+				appIDs: [
+					"JJYTU65Q3D.dk.fizkerinc.universal-links.SwiftUIDemo",
+				],
+				components: [
+					.init(path: "/to-all"),
+					.init(path: "/to-swiftui"),
 				]
 			),
 		]
