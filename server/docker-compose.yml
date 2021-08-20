@@ -16,6 +16,8 @@ version: '3.7'
 
 x-shared_environment: &shared_environment
   LOG_LEVEL: ${LOG_LEVEL:-debug}
+  APPID_UIKIT: ${APPID_UIKIT}
+  APPID_SWIFTUI: ${APPID_SWIFTUI}
 
 services:
   app:

@@ -37,11 +37,18 @@ func routes(_ app: Application) throws {
 		""")
 	}
 
+	enum AppID: String, CaseIterable {
+		case uiKit = "APPID_UIKIT"
+		case swiftUI = "APPID_SWIFTUI"
+	}
+
+	let appIDs = EnvironmentVariables<AppID>()
+
 	app.appleAppSiteAssociation(applinks: .init(
 		details: [
 			.init(
 				appIDs: [
-					"JJYTU65Q3D.dk.fizkerinc.universal-links.UIKitDemo",
+					try appIDs.get(.uiKit),
 				],
 				components: [
 					.init(path: "/to-all"),
@@ -50,7 +57,7 @@ func routes(_ app: Application) throws {
 			),
 			.init(
 				appIDs: [
-					"JJYTU65Q3D.dk.fizkerinc.universal-links.SwiftUIDemo",
+					try appIDs.get(.swiftUI),
 				],
 				components: [
 					.init(path: "/to-all"),
