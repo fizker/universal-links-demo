@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		43D347D027FA380400A81761 /* UniversalLinkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43D347CF27FA380400A81761 /* UniversalLinkController.swift */; };
 		43E22F5026BFD51B0008FA84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E22F4F26BFD51B0008FA84 /* AppDelegate.swift */; };
 		43E22F5226BFD51B0008FA84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E22F5126BFD51B0008FA84 /* SceneDelegate.swift */; };
 		43E22F5426BFD51B0008FA84 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E22F5326BFD51B0008FA84 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		43D347CF27FA380400A81761 /* UniversalLinkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalLinkController.swift; sourceTree = "<group>"; };
 		43E22F4C26BFD51B0008FA84 /* UIKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UIKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E22F4F26BFD51B0008FA84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		43E22F5126BFD51B0008FA84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				43E22F7E26BFDA2E0008FA84 /* UIKitDemo.entitlements */,
 				43E22F4F26BFD51B0008FA84 /* AppDelegate.swift */,
 				43E22F5126BFD51B0008FA84 /* SceneDelegate.swift */,
+				43D347CF27FA380400A81761 /* UniversalLinkController.swift */,
 				43E22F5326BFD51B0008FA84 /* ViewController.swift */,
 				43E22F5526BFD51B0008FA84 /* Main.storyboard */,
 				43E22F5826BFD51E0008FA84 /* Assets.xcassets */,
@@ -142,6 +145,7 @@
 				43E22F5426BFD51B0008FA84 /* ViewController.swift in Sources */,
 				43E22F5026BFD51B0008FA84 /* AppDelegate.swift in Sources */,
 				43E22F5226BFD51B0008FA84 /* SceneDelegate.swift in Sources */,
+				43D347D027FA380400A81761 /* UniversalLinkController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,8 +21,14 @@ class ViewController: UIViewController {
 			guard let self = self
 			else { return }
 
-			let latest = UniversalLinkController.shared.latestUniversalLink
-			self.latestUniversalLinkTextField.text = latest?.path ?? ""
+			self.updateLatestURL()
 		}
+
+		updateLatestURL()
+	}
+
+	func updateLatestURL() {
+		let latest = UniversalLinkController.shared.latestUniversalLink
+		latestUniversalLinkTextField.text = latest?.path ?? ""
 	}
 }
