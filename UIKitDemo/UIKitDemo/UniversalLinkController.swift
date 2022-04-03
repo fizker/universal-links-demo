@@ -15,12 +15,14 @@ class UniversalLinkController {
 		}
 	}
 
-	func handle(_ userActivity: NSUserActivity) {
+	@discardableResult
+	func handle(_ userActivity: NSUserActivity) -> Bool {
 		guard
 			userActivity.activityType == NSUserActivityTypeBrowsingWeb,
 			let incomingURL = userActivity.webpageURL
-		else { return }
+		else { return false }
 
 		latestUniversalLink = incomingURL
+		return true
 	}
 }

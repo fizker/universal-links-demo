@@ -7,13 +7,15 @@ There are two ways that the app is notified, depending on whether or not the app
 The handler could look like the following:
 
 ```swift
-func handle(_ activity: NSUserActivity) {
+func handle(_ activity: NSUserActivity) -> Bool {
 	guard
 		userActivity.activityType == NSUserActivityTypeBrowsingWeb,
 		let incomingURL = userActivity.webpageURL
-	else { return }
+	else { return false }
 
 	// Do something with `incomingURL`
+
+	return true
 }
 ```
 
@@ -41,3 +43,16 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 ```
 
 See [the SceneDelegate class](UIKitDemo/SceneDelegate.swift) for an example of how this can look.
+
+
+## `UIAppDelegate`
+
+If you have not yet moved to UISceneDelegate, or you still need to support iOS 12, the UIAppDelegate implementation will cover our needs.
+
+Only one method is necessary to add to the UIApplicationDelegate. Here, it interacts with the `UniversalLinkController` from the UIKitDemo app:
+
+```swift
+func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+	return UniversalLinkController.shared.handle(userActivity)
+}
+```
