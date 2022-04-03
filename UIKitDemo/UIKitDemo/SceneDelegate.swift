@@ -1,21 +1,5 @@
 import UIKit
 
-extension Notification.Name {
-	static var latestUniversalLinkWasUpdated = Notification.Name("latestUniversalLinkWasUpdated")
-}
-
-class UniversalLinkController {
-	static let shared = UniversalLinkController()
-
-	let notificationCenter = NotificationCenter.default
-
-	var latestUniversalLink: URL? {
-		didSet {
-			notificationCenter.post(name: .latestUniversalLinkWasUpdated, object: latestUniversalLink)
-		}
-	}
-}
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 	var window: UIWindow?
 
@@ -26,12 +10,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let _ = (scene as? UIWindowScene) else { return }
 
 		if let userActivity = connectionOptions.userActivities.first {
-			handle(userActivity)
+			UniversalLinkController.shared.handle(userActivity)
 		}
 	}
 
 	func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
-		handle(userActivity)
+		UniversalLinkController.shared.handle(userActivity)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
@@ -60,14 +44,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		// Called as the scene transitions from the foreground to the background.
 		// Use this method to save data, release shared resources, and store enough scene-specific state information
 		// to restore the scene back to its current state.
-	}
-
-	private func handle(_ userActivity: NSUserActivity) {
-		guard
-			userActivity.activityType == NSUserActivityTypeBrowsingWeb,
-			let incomingURL = userActivity.webpageURL
-		else { return }
-
-		UniversalLinkController.shared.latestUniversalLink = incomingURL
 	}
 }
