@@ -8,6 +8,7 @@ let package = Package(
 	],
 	dependencies: [
 		.package(url: "https://github.com/fizker/swift-apple-associated-domains-vapor.git", from: "1.0.0"),
+		.package(url: "https://github.com/fizker/swift-environment-variables.git", from: "1.0.0"),
 		// 💧 A server-side Swift web framework.
 		.package(url: "https://github.com/vapor/vapor.git", from: "4.55.3"),
 	],
@@ -16,6 +17,7 @@ let package = Package(
 			name: "App",
 			dependencies: [
 				.product(name: "AppleAssociatedDomainsVapor", package: "swift-apple-associated-domains-vapor"),
+				.product(name: "EnvironmentVariables", package: "swift-environment-variables"),
 				.product(name: "Vapor", package: "vapor"),
 			],
 			swiftSettings: [

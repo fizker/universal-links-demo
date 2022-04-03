@@ -1,5 +1,6 @@
 import Vapor
 import AppleAssociatedDomainsVapor
+import EnvironmentVariables
 
 func routes(_ app: Application) throws {
 	app.get { req in
