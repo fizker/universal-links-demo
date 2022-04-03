@@ -1,7 +1,7 @@
 # ================================
 # Build image
 # ================================
-FROM swift:5.4-focal as build
+FROM swift:5.6-focal as build
 
 # Install OS updates and, if needed, sqlite3
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
@@ -39,27 +39,20 @@ RUN [ -d /build/Resources ] && { mv /build/Resources ./Resources && chmod -R a-w
 # ================================
 # Run image
 # ================================
-FROM swift:5.4-focal-slim
+FROM swift:5.6-focal-slim as runner
 
 # Make sure all system packages are up to date.
 RUN export DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true && \
     apt-get -q update && apt-get -q dist-upgrade -y && rm -r /var/lib/apt/lists/*
 
-# Create a vapor user and group with /app as its home directory
-RUN useradd --user-group --create-home --system --skel /dev/null --home-dir /app vapor
-
 # Switch to the new home directory
 WORKDIR /app
 
 # Copy built executable and any staged resources from builder
-COPY --from=build --chown=vapor:vapor /staging /app
+COPY --from=build /staging /app
 
-# Ensure all further commands run as the vapor user
-USER vapor:vapor
+EXPOSE 80
 
-# Let Docker bind to port 8080
-EXPOSE 8080
-
-# Start the Vapor service when the image is run, default to listening on 8080 in production environment
+# Start the Vapor service when the image is run, default to listening on 80 in production environment
 ENTRYPOINT ["./Run"]
-CMD ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "8080"]
+CMD ["serve", "--env", "production", "--hostname", "0.0.0.0", "--port", "80"]
